@@ -18,7 +18,7 @@ public class ProductController {
 
 
     @Value("${server.port}")
-    private String portt;
+    private String port;
 
     @Value("${spring.cloud.client.ip-address}") //spring cloud 自动的获取当前应用的ip地址
     private String ip;
@@ -28,8 +28,8 @@ public class ProductController {
     public Product selectById(@PathVariable("id") Long targetId) {
         Product productt = productService.findById(targetId);
         Product old_product = new Product();
-        productt.setProductName(ip+":"+portt);
-        return productt;
+        old_product.setProductName(ip+":"+port);
+        return old_product;
     }
 
 
