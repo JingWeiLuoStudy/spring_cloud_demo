@@ -25,7 +25,7 @@ public class ProductController {
 
 
     @GetMapping("/{id}")
-    public Product findById(@PathVariable("id") Long id) {
+    public Product getById(@PathVariable("id") Long id) {
         Product product = productService.findById(id);
         product.setProductName(ip+":"+port);
         return product;
