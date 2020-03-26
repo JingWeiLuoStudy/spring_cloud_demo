@@ -25,9 +25,9 @@ public class ProductController {
 
 
     @GetMapping("/{id}")
-    public Product findById(@PathVariable("id") Long id) {
+    public Product getById(@PathVariable("id") Long productId) {
         Product old_product = new Product();
-        Product product = productService.findById(id);
+        Product product = productService.findById(productId);
         product.setProductName(ip+":"+port);
         return product;
     }
