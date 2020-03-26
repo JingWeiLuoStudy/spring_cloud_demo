@@ -1,0 +1,15 @@
+#模拟高可用，9000/8000
+server:
+  port: 9000 #端口
+spring:
+  application:
+    name: eureka-server
+eureka:
+  client:
+    registerWithEureka: false #是否将自己注册到Eureka服务中，本身就是所有无需注册
+    fetchRegistry: false #是否从Eureka中获取注册信息
+    service-url:
+      defaultZone: http://127.0.0.1:9000/eureka/   #客户端与Eureka服务端进行交互的地址
+  server:
+    enable-self-preservation: false #关闭自我保护模式
+    eviction-interval-timer-in-ms: 4000 #剔除时间#关闭自我保护模式
